@@ -9,18 +9,12 @@ body {
 
 .container {
     height: 90%;
-    /* width: 1000px; */
 }
 
 .chat_container {
     height: 90%;
     width: 100%;
-    background-color: salmon;
 }
-
-/* .row {
-    height: 100%;
-} */
 
 .chat {
     width: 40%;
@@ -46,6 +40,7 @@ body {
 }
 
 .content_chat {
+    background-image: url(../assets/img/mine.jpg);
     width: 60%;
     height: 100%;
     padding-left: 0;
