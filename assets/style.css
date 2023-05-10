@@ -28,7 +28,7 @@ body {
     padding-inline: .5rem;
 }
 
-.chat .user img {
+.user img {
     height: 3.5em;
     padding: .3rem;
     border-radius: 5rem;
@@ -37,6 +37,12 @@ body {
 .chat .banner {
     height: 5rem;
     background-color: #8EDAFC;
+}
+
+.chat .card_chat img {
+    height: 4.5em;
+    padding: .3rem;
+    border-radius: 10rem;
 }
 
 .content_chat {
@@ -52,12 +58,6 @@ body {
     border-left: 1px solid black;
     padding-inline: .5rem;
 
-}
-
-.content_chat .user_content img {
-    height: 3.5em;
-    padding: .3rem;
-    border-radius: 5rem;
 }
 
 .content_chat .input-group {
