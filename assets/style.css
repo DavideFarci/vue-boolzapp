@@ -42,6 +42,11 @@ body {
     background-color: #8EDAFC;
 }
 
+.chat .chats {
+    height: calc(100% - 182px);
+    overflow-y: auto;
+}
+
 .chat .card_chat.selected {
     background-color: #e5ddd5;
 }

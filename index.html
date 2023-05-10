@@ -49,25 +49,27 @@
                 </div>
     
                 <!-- vero elenco chat  -->
-                <div class="card_chat d-flex flex-column">
-                    <template v-for="card in contacts" :key="card.avatar">
-                        <template v-for="message in card.messages" :key="message.date">
-                            <div class="d-flex justify-content-between p-2">
-                                <div class="user_img_chat d-flex align-items-center">
-                                    <img :src="card.avatar" alt="avatar_user">
-                                    <div class="d-flex flex-column">
-                                        <div class="name_user">{{ card.name }}</div>
-                                        <div class="mess_preview">{{ message.message }}</div>
-                                    </div>
-                                </div>
-                                <div class="mess_details">
-                                    {{ message.date }}
-                                </div>
-                            </div>
-                        </template>
-                    </template>
-                </div>
 
+                <div class="chats">
+                    <div 
+                    v-for="card in contacts" 
+                    :key="card.avatar"
+                    class="card_chat d-flex justify-content-between p-2" 
+                >
+                    <div class="user_img_chat d-flex align-items-center">
+                        <img :src="card.avatar" alt="avatar_user">
+                        <div class="d-flex flex-column ">
+                            <div class="name_user">{{ card.name }}</div>
+                            <div class="mess_preview"> {{ card.messages[card.messages.length - 1].message }} </div>
+                        </div>
+                    </div>
+                
+                    <div class="mess_details">
+                        {{ card.messages[card.messages.length - 1].date }}
+                    </div>
+                </div>
+                </div>
+    
             </div>
     
             <!-- contenuto della chat  -->
