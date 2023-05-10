@@ -29,8 +29,15 @@ body {
 }
 
 .chat_header {
-    height: 4rem;
     background-color: #EAEAEA;
+    height: 4rem;
+    padding-inline: .5rem;
+}
+
+.chat .user img {
+    height: 3.5em;
+    padding: .3rem;
+    border-radius: 5rem;
 }
 
 .chat .banner {
