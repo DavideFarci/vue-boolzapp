@@ -52,6 +52,11 @@ body {
     border-radius: 10rem;
 }
 
+.card_chat .mess_preview, 
+.card_chat .mess_details {
+    font-size: .8em;
+}
+
 /* finestra dx con contenuto singola chat  */
 
 .content_chat {
