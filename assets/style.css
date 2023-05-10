@@ -72,6 +72,7 @@ body {
 .content_chat .discussion {
     height: calc(100% - 102px);
     padding-inline: 1rem;
+    overflow-y: scroll;
 }
 
 .discussion .mess_sent {
