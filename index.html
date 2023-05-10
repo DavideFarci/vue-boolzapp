@@ -18,39 +18,66 @@
 <body>
 
     <div class="container d-flex align-items-center justify-content-center" id="container">
-        <div class="chat_container">
-            <div class="row">
-
-                <div class="chat">
-                    <div class="chat_header d-flex justify-content-between">
-                        <div class="user d-flex align-items-center">
-                            <img src="assets/img/avatar_1.jpg" alt="avatar_user">
-                            <div class="name_user">Pippo</div>
-                        </div>
-                        <div class="command d-flex align-items-center">
-                            <i class="fa-solid fa-circle-notch p-2"></i>
-                            <i class="fa-solid fa-message p-2"></i>
-                            <i class="fa-solid fa-ellipsis-vertical p-2"></i>
-                        </div>
+        <div class="chat_container d-flex">
+    
+    
+            <!-- elenco delle chat  -->
+            <div class="chat">
+    
+                <div class="chat_header d-flex justify-content-between">
+    
+                    <div class="user d-flex align-items-center">
+                        <img src="assets/img/avatar_1.jpg" alt="avatar_user">
+                        <div class="name_user">Pippo</div>
                     </div>
-                    <div class="banner"></div>
-                </div>
-
-                <div class="content_chat">
-                    <div class="content_header d-flex justify-content-between">
-                        <div class="user_content d-flex align-items-center">
-                            <img src="assets/img/avatar_1.jpg" alt="avatar_user">
-                            <div class="name_user">Pippo</div>
-                        </div>
-                        <div class="command d-flex align-items-center">
-                            <i class="fa-solid fa-circle-notch p-2"></i>
-                            <i class="fa-solid fa-message p-2"></i>
-                            <i class="fa-solid fa-ellipsis-vertical p-2"></i>
-                        </div>
+                    <div class="command d-flex align-items-center">
+                        <i class="fa-solid fa-circle-notch p-2"></i>
+                        <i class="fa-solid fa-message p-2"></i>
+                        <i class="fa-solid fa-ellipsis-vertical p-2"></i>
                     </div>
+    
                 </div>
+                <div class="banner"></div>
+    
+                <!-- barra di ricerca  -->
+    
+                <!-- vero elenco chat  -->
+    
             </div>
-
+    
+            <!-- contenuto della chat  -->
+            <div class="content_chat position-relative">
+    
+                <div class="content_header d-flex justify-content-between">
+    
+                    <div class="user_content d-flex align-items-center">
+                        <img src="assets/img/avatar_1.jpg" alt="avatar_user">
+                        <div class="name_user">Pippo</div>
+                    </div>
+                    <div class="command d-flex align-items-center">
+                        <i class="fa-solid fa-circle-notch p-2"></i>
+                        <i class="fa-solid fa-message p-2"></i>
+                        <i class="fa-solid fa-ellipsis-vertical p-2"></i>
+                    </div>
+    
+                </div>
+    
+                <!-- vero contenuto della chat  -->
+    
+                <!-- input messaggio con tasto invio e emoji  -->
+    
+                <div class="input_message">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                    </div>
+                </div>
+    
+            </div>
+    
+    
         </div>
     </div>
     

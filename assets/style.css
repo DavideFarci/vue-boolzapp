@@ -18,9 +18,9 @@ body {
     background-color: salmon;
 }
 
-.row {
+/* .row {
     height: 100%;
-}
+} */
 
 .chat {
     width: 40%;
@@ -63,4 +63,11 @@ body {
     height: 3.5em;
     padding: .3rem;
     border-radius: 5rem;
+}
+
+.input-group {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
