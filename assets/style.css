@@ -64,7 +64,7 @@ body {
 .content_header {
     height: 4rem;
     background-color: #EAEAEA;
-    border-left: 1px solid black;
+    border-left: 1px solid white;
     padding-inline: .5rem;
 
 }
