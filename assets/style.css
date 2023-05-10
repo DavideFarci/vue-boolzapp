@@ -60,7 +60,7 @@ body {
     border-radius: 5rem;
 }
 
-.input-group {
+.content_chat .input-group {
     position: absolute;
     bottom: 0;
     right: 0;
