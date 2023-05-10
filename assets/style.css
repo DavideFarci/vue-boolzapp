@@ -55,4 +55,12 @@ body {
     height: 4rem;
     background-color: #EAEAEA;
     border-left: 1px solid black;
+    padding-inline: .5rem;
+
+}
+
+.content_chat .user_content img {
+    height: 3.5em;
+    padding: .3rem;
+    border-radius: 5rem;
 }
