@@ -16,7 +16,10 @@ body {
     width: 100%;
 }
 
+/* finestra sx chat generale  */
+
 .chat {
+    background-color: white;
     width: 40%;
     height: 100%;
     padding-right: 0;
@@ -39,11 +42,17 @@ body {
     background-color: #8EDAFC;
 }
 
+.chat .card_chat.selected {
+    background-color: #e5ddd5;
+}
+
 .chat .card_chat img {
     height: 4.5em;
     padding: .3rem;
     border-radius: 10rem;
 }
+
+/* finestra dx con contenuto singola chat  */
 
 .content_chat {
     background-image: url(../assets/img/mine.jpg);
@@ -58,6 +67,29 @@ body {
     border-left: 1px solid black;
     padding-inline: .5rem;
 
+}
+
+.content_chat .discussion {
+    height: calc(100% - 102px);
+    padding-inline: 1rem;
+}
+
+.discussion .mess_sent {
+    background-color: #d5f9ba;
+    align-self: start;
+    max-width: 85%;
+    padding: .5rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.discussion .mess_received {
+    background-color: white;
+    align-self: end;
+    max-width: 85%;
+    padding: .5rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
 }
 
 .content_chat .input-group {
