@@ -93,12 +93,27 @@
     
                 <!-- vero contenuto della chat  -->
 
-                <div 
-                    class="discussion d-flex flex-column justify-content-end"
-                >    
-                    <div class="mess_sent"> Ciao </div>
-                    <div class="mess_received"> Ciao anche a te </div>
-                </div>
+
+                    <div class="discussion d-flex flex-column justify-content-end"> 
+
+                        <template v-for="(item, index) in contacts">
+                            <div 
+                                v-for="(msg, i) in item.messages" 
+                                class="mess" 
+                                :class="activeIndex == index ? `visible` : `invisible`"
+                            > 
+                                <span 
+                                    v-for="(message, j) in msg.messages" 
+                                    :key="j" 
+                                    :class="msg.status == `sent` ? `sent` : `received`"
+                                >
+                                    {{ msg.message }}
+                                </span>
+                            </div>
+                        </template>
+                        
+                        <!-- <div class="mess received"> Ciao anche a te </div> -->
+                    </div>
     
                 <!-- input messaggio con tasto invio e emoji  -->
     
