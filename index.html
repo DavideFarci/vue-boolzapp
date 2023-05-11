@@ -52,9 +52,11 @@
 
                 <div class="chats">
                     <div 
-                        v-for="card in contacts" 
+                        v-for="(card, i) in contacts" 
                         :key="card.avatar"
-                        class="card_chat d-flex justify-content-between p-2" 
+                        class="card_chat d-flex justify-content-between p-2"
+                        :class="{selected: i == activeIndex}"
+                        @click="currentChat(i)" 
                     >
                         <div class="user_img_chat d-flex align-items-center">
                             <img :src="card.avatar" alt="avatar_user">
@@ -79,7 +81,7 @@
     
                     <div class="user d-flex align-items-center">
                         <img src="assets/img/avatar_1.jpg" alt="avatar_user">
-                        <div class="name_user">Pippo</div>
+                        <div class="name_user" >Pippo</div>
                     </div>
                     <div class="command d-flex align-items-center">
                         <i class="fa-solid fa-circle-notch p-2"></i>
@@ -91,33 +93,11 @@
     
                 <!-- vero contenuto della chat  -->
 
-                <div class="discussion d-flex flex-column justify-content-end">    
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
-                    <div class="mess_sent">ciao</div>
-                    <div class="mess_received">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt aspernatur nobis sed dolorem eligendi enim doloremque, maiores doloribus tempore fugit voluptas mollitia expedita ducimus adipisci sit cupiditate corporis. Hic.</div>
+                <div 
+                    class="discussion d-flex flex-column justify-content-end"
+                >    
+                    <div class="mess_sent"> Ciao </div>
+                    <div class="mess_received"> Ciao anche a te </div>
                 </div>
     
                 <!-- input messaggio con tasto invio e emoji  -->

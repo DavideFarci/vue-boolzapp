@@ -7,6 +7,7 @@ Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visua
 const app = Vue.createApp({
     data() {
         return {
+            activeIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -171,7 +172,12 @@ const app = Vue.createApp({
                 }
             ]
 
-        }
+        };
+    },
+    methods: {
+        currentChat(i) {
+            this.activeIndex = i
+        },
     }
 });
 
