@@ -60,6 +60,10 @@ body {
 .card_chat .mess_preview, 
 .card_chat .mess_details {
     font-size: .8em;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* finestra dx con contenuto singola chat  */
