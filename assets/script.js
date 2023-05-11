@@ -7,12 +7,6 @@ Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visua
 const app = Vue.createApp({
     data() {
         return {
-            activeIndex: 0,
-            inpMessage: {
-                date: '15:00',
-                message: '',
-                status: 'sent'
-            },
             contacts: [
                 {
                     name: 'Michele',
@@ -175,7 +169,9 @@ const app = Vue.createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            activeIndex: 0,
+            newMex: '',
 
         };
     },
@@ -189,14 +185,24 @@ const app = Vue.createApp({
             var ora = now.toLocaleTimeString();
             return data + "," + ora;
         },
-        newMessage() {
-            this.message.unshift(this.inpMessage);
-            this.inpMessage = {
+        newMessage(text) {
+            let newMassageText = {
                 date: '15:00',
-                message: '',
+                message: text,
                 status: 'sent'
             }
+            this.contacts[this.activeIndex].messages.push(newMassageText);
+            newMex = ''; //non sta svuotando
         },
+        randomAnswer() {
+            let pcMessage = {
+                date: '15:00',
+                message: "ok stronzo",
+                status: 'received'
+            } 
+            this.contacts[this.activeIndex].messages.push(pcMessage);
+            setInterval()
+        }
     }
 });
 
