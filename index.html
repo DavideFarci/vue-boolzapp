@@ -96,7 +96,7 @@
 
                     <div class="discussion d-flex flex-column justify-content-end"> 
 
-                        <template v-for="(item, index) in contacts">
+                        <!-- <template v-for="(item, index) in contacts">
                             <div 
                                 v-for="(msg, i) in item.messages" 
                                 class="mess" 
@@ -105,13 +105,21 @@
                                 <span 
                                     v-for="(message, j) in msg.messages" 
                                     :key="j" 
-                                    :class="msg.status == `sent` ? `sent` : `received`"
+                                    :class="message.status == `sent` ? `sent` : `received`"
                                 >
-                                    {{ msg.message }}
+                                    {{ message.message }}
                                 </span>
                             </div>
-                        </template>
-                        
+                        </template> -->
+
+                        <div 
+                            class="mess" 
+                            v-for="message in contacts[activeIndex].messages" 
+                            :class="message.status == 'sent' ? 'sent' : 'received'"
+                        >
+                            {{ message.message }}
+                        </div>
+
                         <!-- <div class="mess received"> Ciao anche a te </div> -->
                     </div>
     
@@ -122,8 +130,14 @@
                         <span class="input-group-text" id="basic-addon1">
                             <i class="fa-regular fa-face-smile"></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                            aria-describedby="basic-addon1"
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Username" 
+                            aria-label="Username"     
+                            aria-describedby="basic-addon1" 
+                            v-model="inpMessage.message"
+                            @keyup.enter="newMessage"
                         >
                         <span class="input-group-text" id="basic-addon1">
                             <i class="fa-solid fa-microphone"></i>

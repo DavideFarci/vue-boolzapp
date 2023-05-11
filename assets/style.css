@@ -106,7 +106,6 @@ body {
 }
 
 .discussion .mess.sent {
-    display: none;
     background-color: #d5f9ba;
     align-self: start;
     max-width: 85%;

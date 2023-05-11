@@ -8,6 +8,11 @@ const app = Vue.createApp({
     data() {
         return {
             activeIndex: 0,
+            inpMessage: {
+                date: '15:00',
+                message: '',
+                status: 'sent'
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -177,6 +182,20 @@ const app = Vue.createApp({
     methods: {
         currentChat(i) {
             this.activeIndex = i
+        },
+        getTimeMessage() {
+            var now = new Date();
+            var data = now.toLocaleDateString();
+            var ora = now.toLocaleTimeString();
+            return data + "," + ora;
+        },
+        newMessage() {
+            this.message.unshift(this.inpMessage);
+            this.inpMessage = {
+                date: '15:00',
+                message: '',
+                status: 'sent'
+            }
         },
     }
 });
