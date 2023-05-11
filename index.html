@@ -103,7 +103,7 @@
                         >
                             {{ message.message }}
                         </div>
-                        
+
                     </div>
     
                 <!-- input messaggio con tasto invio e emoji  -->
@@ -119,8 +119,8 @@
                             placeholder="Username" 
                             aria-label="Username"     
                             aria-describedby="basic-addon1" 
-                            v-model="inpMessage.message"
-                            @keyup.enter="newMessage"
+                            v-model="newMex"
+                            @keyup.enter="newMessage(newMex)"
                         >
                         <span class="input-group-text" id="basic-addon1">
                             <i class="fa-solid fa-microphone"></i>
