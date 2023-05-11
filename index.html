@@ -96,22 +96,6 @@
 
                     <div class="discussion d-flex flex-column justify-content-end"> 
 
-                        <!-- <template v-for="(item, index) in contacts">
-                            <div 
-                                v-for="(msg, i) in item.messages" 
-                                class="mess" 
-                                :class="activeIndex == index ? `visible` : `invisible`"
-                            > 
-                                <span 
-                                    v-for="(message, j) in msg.messages" 
-                                    :key="j" 
-                                    :class="message.status == `sent` ? `sent` : `received`"
-                                >
-                                    {{ message.message }}
-                                </span>
-                            </div>
-                        </template> -->
-
                         <div 
                             class="mess" 
                             v-for="message in contacts[activeIndex].messages" 
@@ -119,8 +103,7 @@
                         >
                             {{ message.message }}
                         </div>
-
-                        <!-- <div class="mess received"> Ciao anche a te </div> -->
+                        
                     </div>
     
                 <!-- input messaggio con tasto invio e emoji  -->
