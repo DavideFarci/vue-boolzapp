@@ -80,8 +80,8 @@
                 <div class="content_header d-flex justify-content-between">
     
                     <div class="user d-flex align-items-center">
-                        <img src="assets/img/avatar_1.jpg" alt="avatar_user">
-                        <div class="name_user" >Pippo</div>
+                        <img v-for="(element, i) in contacts" :src="element.avatar" alt="avatar_user" :class="{active: i == activeIndex}">
+                        <div class="name_user_discussion" v-for="(element, i) in contacts" :class="{active: i == activeIndex}"> {{ element.name }} </div>
                     </div>
                     <div class="command d-flex align-items-center">
                         <i class="fa-solid fa-circle-notch p-2"></i>

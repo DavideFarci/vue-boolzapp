@@ -83,6 +83,22 @@ body {
 
 }
 
+.content_header .user img {
+    display: none;
+}
+
+.content_header .user img.active {
+    display: block;
+}
+
+.name_user_discussion {
+    display: none;
+}
+
+.name_user_discussion.active {
+    display: block;
+}
+
 .content_chat .discussion {
     height: calc(100% - 102px);
     padding-inline: 1rem;
