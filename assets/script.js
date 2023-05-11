@@ -186,23 +186,25 @@ const app = Vue.createApp({
             return data + "," + ora;
         },
         newMessage(text) {
-            let newMassageText = {
-                date: '15:00',
-                message: text,
-                status: 'sent'
+            if (text !== "") {
+                let newMassageText = {
+                    date: '15:00',
+                    message: text,
+                    status: 'sent'
+                }
+                this.contacts[this.activeIndex].messages.push(newMassageText);
+                //newMex = ''; non sta svuotando
+                setTimeout(this.randomAnswer, 1000);
             }
-            this.contacts[this.activeIndex].messages.push(newMassageText);
-            newMex = ''; //non sta svuotando
         },
         randomAnswer() {
             let pcMessage = {
                 date: '15:00',
                 message: "ok stronzo",
                 status: 'received'
-            } 
+            };
             this.contacts[this.activeIndex].messages.push(pcMessage);
-            setInterval()
-        }
+        },
     }
 });
 
