@@ -86,20 +86,16 @@
                 <div class="content_header d-flex justify-content-between">
     
                     <div class="user d-flex align-items-center">
-                        <img 
-                            v-for="(element, i) in searchContact" 
-                            :key="element.name"
-                            :src="element.avatar" 
+                        <img  
+                            :src="contacts[activeIndex].avatar" 
                             alt="avatar_user" 
-                            :class="{active: element == contacts[activeIndex]}"
+
                         >
                         <div 
                             class="name_user_discussion" 
-                            v-for="(element, i) in searchContact" 
-                            :class="{active: element == contacts[activeIndex]}"
                         > 
-                            {{ element.name }}
-                            <div style="font-size: .8rem;">Ultimo accesso oggi alle: {{ element.messages[element.messages.length - 1].date }} </div>
+                            {{ contacts[activeIndex].name }}
+                            <div style="font-size: .8rem;">Ultimo accesso oggi alle: {{ contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date }} </div>
                         </div>
                     </div>
                     <div class="command d-flex align-items-center">
@@ -116,7 +112,6 @@
                     <div class="discussion d-flex flex-column justify-content-end"> 
 
                         <div 
-                            v-cloak
                             class="mess d-flex flex-column" 
                             v-for="message in contacts[activeIndex].messages" 
                             :class="message.status == 'sent' ? 'sent' : 'received'"
