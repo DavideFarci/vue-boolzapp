@@ -172,12 +172,13 @@ const app = Vue.createApp({
             ],
             activeIndex: 0,
             newMex: '',
+            inpSearch: '',
 
         };
     },
     methods: {
-        currentChat(i) {
-            this.activeIndex = i
+        currentChat(element) {
+            this.activeIndex = this.contacts.indexOf(element);
         },
         getTimeMessage() {
             var now = new Date();
@@ -205,6 +206,29 @@ const app = Vue.createApp({
             };
             this.contacts[this.activeIndex].messages.push(pcMessage);
         },
+        // setFilteredIndex(filteredIndex) {
+        //     // Esegui un'azione con l'activeIndex dell'array filtrato
+
+        //     const activeIndexInFilteredArray = filteredIndex;
+        //     const activeIndexInOriginalArray = this.contacts.indexOf(
+        //       this.searchContact[activeIndexInFilteredArray]
+        //     );
+        //     // debugger
+            
+        //     // Esempio di azione: stampa l'indice attivo
+        //     this.currentChat(activeIndexInFilteredArray);
+        //     console.log("Active index in filtered array:", activeIndexInFilteredArray);
+        //     console.log("Active index in original array:", activeIndexInOriginalArray);
+
+        // },
+
+    },
+    computed: {
+        searchContact() {
+            return this.contacts.filter((contacts) => {
+                return contacts.name.toLowerCase().includes(this.inpSearch.toLowerCase())
+            })
+        }
     }
 });
 

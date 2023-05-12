@@ -43,7 +43,7 @@ body {
 }
 
 .chat .chats {
-    height: calc(100% - 182px);
+    height: calc(100% - 144px);
     overflow-y: auto;
 }
 

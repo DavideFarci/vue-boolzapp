@@ -13,11 +13,12 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
     <script src="assets/script.js" defer></script>
     <link rel="stylesheet" href="assets/style.css">
-    <title>BoolzApp</title>
+    <link rel="stylesheet" href="">
+    <style>[v-cloak] {display: none;}</style>
 </head>
 <body>
 
-    <div class="container d-flex align-items-center justify-content-center" id="container">
+    <div class="container d-flex align-items-center justify-content-center" id="container" v-cloak>
         <div class="chat_container d-flex">
     
     
@@ -39,24 +40,29 @@
     
                 </div>
                 <div class="banner"></div>
-    
-                <!-- barra di ricerca  -->
-
-                <div class="search input-group">
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                        aria-describedby="basic-addon1"
-                    >
-                </div>
-    
+                
                 <!-- vero elenco chat  -->
-
+                
                 <div class="chats">
+                    
+                    <!-- barra di ricerca  -->
+                    <div class="search input-group">
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Username" 
+                            aria-label="Username"
+                            aria-describedby="basic-addon1" 
+                            v-model="inpSearch"
+                        >
+                    </div>
+
                     <div 
-                        v-for="(card, i) in contacts" 
-                        :key="card.avatar"
+                        v-for="(card, i) in searchContact" 
+                        :key="card.name"
                         class="card_chat d-flex justify-content-between p-2"
-                        :class="{selected: i == activeIndex}"
-                        @click="currentChat(i)" 
+                        @click="currentChat(card)"
+                        :class="{selected: card == activeIndex}"
                     >
                         <div class="user_img_chat d-flex align-items-center">
                             <img :src="card.avatar" alt="avatar_user">
