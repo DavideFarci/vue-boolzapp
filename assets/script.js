@@ -225,8 +225,8 @@ const app = Vue.createApp({
     },
     computed: {
         searchContact() {
-            return this.contacts.filter((contacts) => {
-                return contacts.name.toLowerCase().includes(this.inpSearch.toLowerCase())
+            return this.contacts.filter((card) => {
+                return card.name.toLowerCase().includes(this.inpSearch.toLowerCase())
             })
         }
     }
