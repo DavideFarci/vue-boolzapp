@@ -207,6 +207,9 @@ const app = Vue.createApp({
                 });
             };
         },
+        deleteMessage(i) {
+            this.contacts[this.activeIndex].messages.splice(i, 1)
+        }
     },
     computed: {
         searchContact() {
