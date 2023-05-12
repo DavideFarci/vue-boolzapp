@@ -83,12 +83,24 @@
             <!-- contenuto della chat DX -->
             <div class="content_chat position-relative">
                 
-                <!-- header della chat  -->
+                <!-- header della discussione  -->
                 <div class="content_header d-flex justify-content-between">
     
                     <div class="user d-flex align-items-center">
-                        <img v-for="(element, i) in contacts" :src="element.avatar" alt="avatar_user" :class="{active: i == activeIndex}">
-                        <div class="name_user_discussion" v-for="(element, i) in contacts" :class="{active: i == activeIndex}"> {{ element.name }} </div>
+                        <img 
+                            v-for="(element, i) in searchContact" 
+                            :src="element.avatar" 
+                            alt="avatar_user" 
+                            :class="{active: element == contacts[activeIndex]}"
+                        >
+                        <div 
+                            class="name_user_discussion" 
+                            v-for="(element, i) in searchContact" 
+                            :class="{active: element == contacts[activeIndex]}"
+                        > 
+                            {{ element.name }}
+                            <div style="font-size: .8rem;">Ultimo accesso oggi alle: {{ element.messages[element.messages.length - 1].date }} </div>
+                        </div>
                     </div>
                     <div class="command d-flex align-items-center">
                         <i class="fa-solid fa-circle-notch p-2"></i>
