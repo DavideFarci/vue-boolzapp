@@ -21,7 +21,7 @@
         <div class="chat_container d-flex">
     
     
-            <!-- elenco delle chat  -->
+            <!-- elenco delle chat SX -->
             <div class="chat">
                 
                 <!-- header sx con banner  -->
@@ -80,9 +80,10 @@
     
             </div>
     
-            <!-- contenuto della chat  -->
+            <!-- contenuto della chat DX -->
             <div class="content_chat position-relative">
-    
+                
+                <!-- header della chat  -->
                 <div class="content_header d-flex justify-content-between">
     
                     <div class="user d-flex align-items-center">
@@ -104,11 +105,12 @@
 
                         <div 
                             v-cloak
-                            class="mess" 
+                            class="mess d-flex flex-column" 
                             v-for="message in contacts[activeIndex].messages" 
                             :class="message.status == 'sent' ? 'sent' : 'received'"
                         >
                             {{ message.message }}
+                            <div class="align-self-end" style="font-size: .7em; color: grey;"> {{ message.date }} </div>
                         </div>
 
                     </div>

@@ -47,6 +47,11 @@ body {
     overflow-y: auto;
 }
 
+.chat .card_chat:hover {
+    background-color: #fcf3ea;
+
+}
+
 .chat .card_chat.selected {
     background-color: #e5ddd5;
 }
