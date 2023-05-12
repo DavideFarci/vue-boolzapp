@@ -196,16 +196,25 @@ const app = Vue.createApp({
                 this.contacts[index].messages.push(newMassageText);
                 this.newMex = '';
                 setTimeout(this.randomAnswer, 1000);
-            }
-        },
-        randomAnswer() {
-            let pcMessage = {
-                date: '15:00',
-                message: "ok stronzo",
-                status: 'received'
+
+                setTimeout(() => {
+                    let pcMessage = {
+                        date: '15:00',
+                        message: "ok stronzo",
+                        status: 'received'
+                    };
+                    this.contacts[index].messages.push(pcMessage);
+                });
             };
-            this.contacts[this.activeIndex].messages.push(pcMessage);
         },
+        // randomAnswer() {
+        //     let pcMessage = {
+        //         date: '15:00',
+        //         message: "ok stronzo",
+        //         status: 'received'
+        //     };
+        //     this.contacts[index].messages.push(pcMessage);
+        // },
     },
     computed: {
         searchContact() {
