@@ -127,7 +127,7 @@
                             aria-label="Username"     
                             aria-describedby="basic-addon1" 
                             v-model="newMex"
-                            @keyup.enter="newMessage(newMex)"
+                            @keyup.enter="newMessage(newMex, activeIndex)"
                         >
                         <span class="input-group-text" id="basic-addon1">
                             <i class="fa-solid fa-microphone" @click="newMessage(newMex)"></i>

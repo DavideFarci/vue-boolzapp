@@ -186,15 +186,15 @@ const app = Vue.createApp({
             var ora = now.toLocaleTimeString();
             return data + "," + ora;
         },
-        newMessage(text) {
+        newMessage(text, index) {
             if (text !== "") {
                 let newMassageText = {
                     date: '15:00',
                     message: text,
                     status: 'sent'
                 }
-                this.contacts[this.activeIndex].messages.push(newMassageText);
-                //newMex = ''; non sta svuotando
+                this.contacts[index].messages.push(newMassageText);
+                this.newMex = '';
                 setTimeout(this.randomAnswer, 1000);
             }
         },
@@ -206,22 +206,6 @@ const app = Vue.createApp({
             };
             this.contacts[this.activeIndex].messages.push(pcMessage);
         },
-        // setFilteredIndex(filteredIndex) {
-        //     // Esegui un'azione con l'activeIndex dell'array filtrato
-
-        //     const activeIndexInFilteredArray = filteredIndex;
-        //     const activeIndexInOriginalArray = this.contacts.indexOf(
-        //       this.searchContact[activeIndexInFilteredArray]
-        //     );
-        //     // debugger
-            
-        //     // Esempio di azione: stampa l'indice attivo
-        //     this.currentChat(activeIndexInFilteredArray);
-        //     console.log("Active index in filtered array:", activeIndexInFilteredArray);
-        //     console.log("Active index in original array:", activeIndexInOriginalArray);
-
-        // },
-
     },
     computed: {
         searchContact() {
