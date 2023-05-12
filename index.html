@@ -13,7 +13,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
     <script src="assets/script.js" defer></script>
     <link rel="stylesheet" href="assets/style.css">
-    <style>[v-cloak] {display: none;}</style>
+    <!-- <style>[v-cloak] {display: none;}</style> -->
 </head>
 <body>
 
@@ -57,7 +57,6 @@
                     </div>
 
                     <div 
-                        v-cloak
                         v-for="(card, i) in searchContact" 
                         :key="card.name"
                         class="card_chat d-flex justify-content-between p-2"
@@ -89,6 +88,7 @@
                     <div class="user d-flex align-items-center">
                         <img 
                             v-for="(element, i) in searchContact" 
+                            :key="element.name"
                             :src="element.avatar" 
                             alt="avatar_user" 
                             :class="{active: element == contacts[activeIndex]}"

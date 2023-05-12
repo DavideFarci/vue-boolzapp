@@ -207,19 +207,11 @@ const app = Vue.createApp({
                 });
             };
         },
-        // randomAnswer() {
-        //     let pcMessage = {
-        //         date: '15:00',
-        //         message: "ok stronzo",
-        //         status: 'received'
-        //     };
-        //     this.contacts[index].messages.push(pcMessage);
-        // },
     },
     computed: {
         searchContact() {
-            return this.contacts.filter((card) => {
-                return card.name.toLowerCase().includes(this.inpSearch.toLowerCase())
+            return this.contacts.filter((contacts) => {
+                return contacts.name.toLowerCase().includes(this.inpSearch.toLowerCase())
             })
         }
     }
