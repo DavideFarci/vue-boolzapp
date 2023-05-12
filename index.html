@@ -13,12 +13,11 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
     <script src="assets/script.js" defer></script>
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="">
     <style>[v-cloak] {display: none;}</style>
 </head>
 <body>
 
-    <div class="container d-flex align-items-center justify-content-center" id="container" v-cloak>
+    <div class="container d-flex align-items-center justify-content-center" id="container">
         <div class="chat_container d-flex">
     
     
@@ -58,6 +57,7 @@
                     </div>
 
                     <div 
+                        v-cloak
                         v-for="(card, i) in searchContact" 
                         :key="card.name"
                         class="card_chat d-flex justify-content-between p-2"
@@ -103,6 +103,7 @@
                     <div class="discussion d-flex flex-column justify-content-end"> 
 
                         <div 
+                            v-cloak
                             class="mess" 
                             v-for="message in contacts[activeIndex].messages" 
                             :class="message.status == 'sent' ? 'sent' : 'received'"
