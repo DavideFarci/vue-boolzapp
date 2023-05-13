@@ -195,7 +195,6 @@ const app = Vue.createApp({
                 }
                 this.contacts[index].messages.push(newMassageText);
                 this.newMex = '';
-                setTimeout(this.randomAnswer, 1000);
 
                 setTimeout(() => {
                     let pcMessage = {
@@ -204,7 +203,7 @@ const app = Vue.createApp({
                         status: 'received'
                     };
                     this.contacts[index].messages.push(pcMessage);
-                });
+                }, 1000);
             };
         },
         deleteMessage(i) {
