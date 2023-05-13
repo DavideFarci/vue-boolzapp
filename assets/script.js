@@ -189,7 +189,7 @@ const app = Vue.createApp({
         newMessage(text, index) {
             if (text !== "") {
                 let newMassageText = {
-                    date: '15:00',
+                    date: this.getTimeMessage(),
                     message: text,
                     status: 'sent'
                 }
@@ -198,7 +198,7 @@ const app = Vue.createApp({
 
                 setTimeout(() => {
                     let pcMessage = {
-                        date: '15:00',
+                        date: this.getTimeMessage(),
                         message: "ok stronzo",
                         status: 'received'
                     };
