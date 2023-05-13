@@ -174,6 +174,7 @@ const app = Vue.createApp({
             newMex: '',
             inpSearch: '',
 
+
         };
     },
     methods: {
@@ -207,7 +208,13 @@ const app = Vue.createApp({
             };
         },
         deleteMessage(i) {
-            this.contacts[this.activeIndex].messages.splice(i, 1)
+            this.contacts[this.activeIndex].messages.splice(i, 1);
+            // const lastIndex = messages.length - 1;
+            // this.contacts[this.activeIndex].messages.splice(lastIndex, 1);
+        },
+        scrollToDiv() {
+            console.log("sono entrato")
+            this.$refs.myDiv.scrollIntoView({ behavior: 'smooth', block: "start" });
         }
     },
     computed: {
@@ -218,6 +225,7 @@ const app = Vue.createApp({
         }
     }
 });
+
 
 app.mount("#container");
 

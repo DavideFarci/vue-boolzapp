@@ -107,7 +107,7 @@
                 </div>
     
                 <!-- vero contenuto della chat  -->
-                <div class="discussion d-flex flex-column justify-content-end"> 
+                <div class="discussion d-flex flex-column justify-content-end" ref="myDiv" @mouseenter="scrollToDiv"> 
 
                     <div 
                         class="mess d-flex flex-column" 
@@ -115,11 +115,11 @@
                         :class="message.status == 'sent' ? 'sent' : 'received'"
                     >
                     <div class="dropdown  align-self-end">
-                        <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0; font-size: .9em;">
+                        <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0; font-size: .6em;">
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a @click="deleteMessage(message)" class="dropdown-item" href="#">Elimina</a></li>
+                            <li><a @click="deleteMessage(contacts[activeIndex].messages.length - 1)" class="dropdown-item" href="#">Elimina</a></li>
                             <li><a class="dropdown-item" href="#">Info</a></li>
                         </ul>
                     </div>
