@@ -1,10 +1,21 @@
-body {
-    height: 100vh;
-    background: linear-gradient(
+:root {
+    --bg-background-primar: linear-gradient(  
         to bottom,
         #009688 20%,
         #DBDBD3 20%
     );
+    --gb-header: #EAEAEA;
+    --bg-chats: white;
+    --bg-chat-selected: #e5ddd5  ;
+    --bg-chat-hover:  #fcf3ea  ;
+    --bg-banner: #8EDAFC ;
+    --bg-mess-sent: #d5f9ba ;
+    --bg-mess-received: white ;
+}
+
+body {
+    height: 100vh;
+    background: var(--bg-background-primar);
 }
 
 .container {
@@ -26,7 +37,7 @@ body {
 }
 
 .chat_header {
-    background-color: #EAEAEA;
+    background-color: var(--gb-header);
     height: 4rem;
     padding-inline: .5rem;
 }
@@ -39,7 +50,7 @@ body {
 
 .chat .banner {
     height: 5rem;
-    background-color: #8EDAFC;
+    background-color: var(--bg-banner);
 }
 
 .banner i {
@@ -61,15 +72,15 @@ body {
 .chat .chats {
     height: calc(100% - 144px);
     overflow-y: auto;
+    background-color: var(--bg-chats);
 }
 
 .chat .card_chat:hover {
-    background-color: #fcf3ea;
-
+    background-color: var(--bg-chat-hover);
 }
 
 .chat .card_chat.selected {
-    background-color: #e5ddd5;
+    background-color:var(--bg-chat-selected);
 }
 
 .chat .card_chat img {
@@ -98,7 +109,7 @@ body {
 
 .content_header {
     height: 4rem;
-    background-color: #EAEAEA;
+    background-color: var(--gb-header);
     border-left: 1px solid white;
     padding-inline: .5rem;
 
@@ -111,7 +122,7 @@ body {
 }
 
 .discussion .mess.sent {
-    background-color: #d5f9ba;
+    background-color: var(--bg-mess-sent);
     align-self: start;
     max-width: 85%;
     padding: .5rem 1.5rem;
@@ -120,7 +131,7 @@ body {
 }
 
 .discussion .mess.received {
-    background-color: white;
+    background-color: var(--bg-mess-received);
     align-self: end;
     max-width: 85%;
     padding: .5rem 1.5rem;
