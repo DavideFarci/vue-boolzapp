@@ -12,9 +12,10 @@
     crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js" defer></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
-    <script src="assets/script.js" defer></script>
+    <script src="assets/script.js" defer></script>fbasic-addon1
     <link rel="stylesheet" href="assets/style.css">
     <!-- <style>[v-cloak] {display: none;}</style> -->
+    <title>BoolzApp</title>
 </head>
 <body>
 
@@ -51,7 +52,6 @@
                             class="form-control" 
                             placeholder="Cerca tra le chat..." 
                             aria-label="Username"
-                            aria-describedby="basic-addon1" 
                             v-model="inpSearch"
                         >
                     </div>
@@ -132,7 +132,7 @@
                 <!-- input messaggio con tasto invio e emoji  -->   
                 <div class="input_message">
                     <div class="input-group">
-                        <span class="input-group-text" id="basic-addon1">
+                        <span class="input-group-text">
                             <i class="fa-regular fa-face-smile"></i>
                         </span>
                         <input 
@@ -140,11 +140,10 @@
                             class="form-control" 
                             placeholder="Messaggio..." 
                             aria-label="Username"     
-                            aria-describedby="basic-addon1" 
                             v-model="newMex"
                             @keyup.enter="newMessage(newMex, activeIndex)"
                         >
-                        <span class="input-group-text" id="basic-addon1">
+                        <span class="input-group-text">
                             <i class="fa-solid fa-microphone" @click="newMessage(newMex)"></i>
                         </span>
                     </div>
