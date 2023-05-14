@@ -130,7 +130,8 @@
                         </ul>
                     </div>
                         {{ message.message }}
-                        <div class="align-self-end" style="font-size: .7em; color: grey;"> {{ message.date }} </div>
+                        <div class="align-self-end" style="font-size: .7em; color: grey;"> {{ message.date.substring(10, 16) }} </div>
+                        <!-- La riga sopra fa apparire un warning -->
                     </div>
 
                 </div>
