@@ -196,7 +196,6 @@ const app = Vue.createApp({
                 }
                 this.contacts[index].messages.push(newMassageText);
                 this.newMex = '';
-                //this.scrollDivToBottom();
                 this.scrollBottomFix();
 
                 setTimeout(() => {
@@ -208,16 +207,14 @@ const app = Vue.createApp({
                     this.contacts[index].messages.push(pcMessage);
                     this.scrollBottomFix();
                     
-                }, 1000);
-                //this.scrollDivToBottom();
-            };
+                }, 1000);            };
         },
         deleteMessage(i) {
             this.contacts[this.activeIndex].messages.splice(i, 1);
             // const lastIndex = messages.length - 1;
             // this.contacts[this.activeIndex].messages.splice(lastIndex, 1);
         },
-        // Assicurarsi che lo scroll stia sempre fissato in basso
+        // Per assicurare che lo scroll stia sempre fissato in basso(funziona)
         scrollBottomFix() {
             this.$nextTick(() => {
                 let container = this.$refs.discussion;
@@ -242,15 +239,7 @@ const app = Vue.createApp({
             })
         }
     },
-    /*
-    Quando viene aggiunto o modificato un messaggio, il watcher chatMessages viene attivato e chiama il metodo scrollToBottom() per spostare lo scroll nella parte inferiore del div della chat.
-    (NON FUNZIONA UN CAZZO DI NIENTE)
-    watch: {
-        chatMessages() {
-            this.$nextTick(this.scrollToBottom);
-        },
-    },
-    */
+
 });
 
 
