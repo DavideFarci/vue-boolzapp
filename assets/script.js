@@ -196,6 +196,8 @@ const app = Vue.createApp({
                 }
                 this.contacts[index].messages.push(newMassageText);
                 this.newMex = '';
+                //this.scrollDivToBottom();
+                this.scrollBottomFix();
 
                 setTimeout(() => {
                     let pcMessage = {
@@ -204,7 +206,10 @@ const app = Vue.createApp({
                         status: 'received'
                     };
                     this.contacts[index].messages.push(pcMessage);
+                    this.scrollBottomFix();
+                    
                 }, 1000);
+                //this.scrollDivToBottom();
             };
         },
         deleteMessage(i) {
@@ -212,10 +217,23 @@ const app = Vue.createApp({
             // const lastIndex = messages.length - 1;
             // this.contacts[this.activeIndex].messages.splice(lastIndex, 1);
         },
-        scrollToDiv() {
-            console.log("sono entrato")
-            this.$refs.myDiv.scrollIntoView({ behavior: 'smooth', block: "start" });
-        }
+        // Assicurarsi che lo scroll stia sempre fissato in basso
+        scrollBottomFix() {
+            this.$nextTick(() => {
+                let container = this.$refs.discussion;
+                container.scrollTop = container.scrollHeight;
+            });
+        },
+        // altro tentativo con la proprietà .scrollIntoView()
+        /*
+         scrollDivToBottom() {
+             this.$nextTick(() => {
+                 const myDiv = this.$refs.myDiv;
+                 myDiv.lastElementChild.scrollIntoView({ behavior: 'smooth', block: 'end' });
+             });
+ 
+         },
+        */
     },
     computed: {
         searchContact() {
@@ -223,7 +241,16 @@ const app = Vue.createApp({
                 return contacts.name.toLowerCase().includes(this.inpSearch.toLowerCase())
             })
         }
-    }
+    },
+    /*
+    Quando viene aggiunto o modificato un messaggio, il watcher chatMessages viene attivato e chiama il metodo scrollToBottom() per spostare lo scroll nella parte inferiore del div della chat.
+    (NON FUNZIONA UN CAZZO DI NIENTE)
+    watch: {
+        chatMessages() {
+            this.$nextTick(this.scrollToBottom);
+        },
+    },
+    */
 });
 
 
