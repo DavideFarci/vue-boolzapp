@@ -182,9 +182,9 @@ const app = Vue.createApp({
             this.activeIndex = this.contacts.indexOf(element);
         },
         getTimeMessage() {
-            var now = new Date();
-            var data = now.toLocaleDateString();
-            var ora = now.toLocaleTimeString();
+            let now = new Date();
+            let data = now.toLocaleDateString();
+            let ora = now.toLocaleTimeString();
             return data + "," + ora;
         },
         newMessage(text, index) {
@@ -206,8 +206,9 @@ const app = Vue.createApp({
                     };
                     this.contacts[index].messages.push(pcMessage);
                     this.scrollBottomFix();
-                    
-                }, 1000);            };
+
+                }, 1000);
+            };
         },
         deleteMessage(i) {
             this.contacts[this.activeIndex].messages.splice(i, 1);
@@ -237,7 +238,7 @@ const app = Vue.createApp({
             return this.contacts.filter((contacts) => {
                 return contacts.name.toLowerCase().includes(this.inpSearch.toLowerCase())
             })
-        }
+        },
     },
 
 });

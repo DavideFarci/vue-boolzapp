@@ -44,7 +44,7 @@
                     <i class="fa-regular fa-bell-slash"></i>
                     <div class="d-flex flex-column justify-content-center">
                         <span>Ricevi notifiche di nuovi messaggi</span>
-                        <spans class="grey_banenr">Attiva notifiche desktop</span>
+                        <span class="grey_banenr">Attiva notifiche desktop</span>
                     </div>
                 </div>
                 
@@ -125,11 +125,12 @@
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a @click="deleteMessage(contacts[activeIndex].messages.length - 1)" class="dropdown-item" href="#">Elimina</a></li>
+                            <li><a @click="deleteMessage(contacts)" class="dropdown-item" href="#">Elimina</a></li>
                             <li><a class="dropdown-item" href="#">Info</a></li>
                         </ul>
                     </div>
                         {{ message.message }}
+                        <!-- <div class="align-self-end" style="font-size: .7em; color: grey;"> {{ message.date }} </div> -->
                         <div class="align-self-end" style="font-size: .7em; color: grey;"> {{ message.date.substring(10, 16) }} </div>
                         <!-- La riga sopra fa apparire un warning -->
                     </div>
