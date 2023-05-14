@@ -42,6 +42,22 @@ body {
     background-color: #8EDAFC;
 }
 
+.banner i {
+    font-size: 1.2em;
+    background-color: #F2FBFF;
+    color: #8EDAFC;
+    padding: 1rem;
+    border-radius: 2rem;
+    align-self: center;
+}
+
+.banner .grey_banenr {
+    font-size: .9em;
+    color: grey;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .chat .chats {
     height: calc(100% - 144px);
     overflow-y: auto;
