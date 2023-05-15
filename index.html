@@ -73,12 +73,12 @@
                             <img :src="card.avatar" alt="avatar_user">
                             <div class="d-flex flex-column ">
                                 <div class="name_user">{{ card.name }}</div>
-                                <div class="mess_preview"> {{ card.messages[card.messages.length - 1].message }} </div>
+                                <div class="mess_preview" v-if="card.messages && card.messages.length > 0"> {{ card.messages.length > 0 ? card.messages[card.messages.length - 1].message : '' }} </div>
                             </div>
                         </div>
                 
-                        <div class="mess_details">
-                            {{ card.messages[card.messages.length - 1].date }}
+                        <div class="mess_details" v-if="card.messages && card.messages.length > 0">
+                            {{ card.messages.length > 0 ? card.messages[card.messages.length - 1].date : '' }}
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                             class="name_user_discussion" 
                         > 
                             {{ contacts[activeIndex].name }}
-                            <div style="font-size: .8rem;">Ultimo accesso oggi alle: {{ contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date }} </div>
+                            <div v-if="contacts[activeIndex].messages && contacts[activeIndex].messages.length > 0" style="font-size: .8rem;">Ultimo accesso oggi alle: {{ contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date }} </div>
                         </div>
                     </div>
                     <div class="command d-flex align-items-center">
@@ -117,7 +117,7 @@
 
                     <div 
                         class="mess d-flex flex-column" 
-                        v-for="message in contacts[activeIndex].messages" 
+                        v-for="message, i in contacts[activeIndex].messages" 
                         :class="message.status == 'sent' ? 'sent' : 'received'"
                     >
                     <div class="dropdown  align-self-end">
@@ -129,7 +129,7 @@
                             <li><a class="dropdown-item" href="#">Info</a></li>
                         </ul>
                     </div>
-                        {{ message.message }}
+                        {{ message && message.message }}
                         <div class="align-self-end" style="font-size: .7em; color: grey;"> {{ message.date.substring(10, 16) }} </div>
                     </div>
 
