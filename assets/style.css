@@ -1,4 +1,4 @@
-:root {
+.light {
     --bg-background-primar: linear-gradient(  
         to bottom,
         #009688 20%,
@@ -11,11 +11,33 @@
     --bg-banner: #8EDAFC ;
     --bg-mess-sent: #d5f9ba ;
     --bg-mess-received: white ;
+    --bg-content-chat: url(../assets/img/mine.jpg);
+    --text-color: black;
+    --border-color: white;
 }
 
-body {
+.dark {
+    --bg-background-primar: linear-gradient(  
+        to bottom,
+        #01695f 20%,
+        rgb(49, 49, 49) 20%
+    );
+    --gb-header: rgb(46, 46, 46);
+    --bg-chats: black;
+    --bg-chat-selected: #01695f  ;
+    --bg-chat-hover: #373737  ;
+    --bg-banner: black ;
+    --bg-mess-sent: #01695f ;
+    --bg-mess-received: #0a552c;
+    --bg-content-chat: url(../assets/img/b91dc2113881469c07ac99ad9a024a01.jpg);
+    --text-color: rgb(255, 255, 255);
+    --border-color: black;
+}
+
+.background {
     height: 100vh;
     background: var(--bg-background-primar);
+    color: var(--text-color);
 }
 
 .container {
@@ -25,6 +47,15 @@ body {
 .chat_container {
     height: 90%;
     width: 100%;
+    border: 1px solid var(--border-color);
+}
+
+input {
+    color: var(--text-color) !important;
+}
+
+.form-control::placeholder {
+    color: var(--text-color);
 }
 
 /* finestra sx chat generale  */
@@ -62,7 +93,7 @@ body {
     align-self: center;
 }
 
-.banner .grey_banenr {
+.banner .grey_banner {
     font-size: .9em;
     color: grey;
     text-decoration: underline;
@@ -73,6 +104,10 @@ body {
     height: calc(100% - 144px);
     overflow-y: auto;
     background-color: var(--bg-chats);
+}
+
+.input-group {
+    background-color: black !important;
 }
 
 .chat .card_chat:hover {
@@ -101,7 +136,7 @@ body {
 /* finestra dx con contenuto singola chat  */
 
 .content_chat {
-    background-image: url(../assets/img/mine.jpg);
+    background-image: var(--bg-content-chat);
     width: 60%;
     height: 100%;
     padding-left: 0;
@@ -110,7 +145,7 @@ body {
 .content_header {
     height: 4rem;
     background-color: var(--gb-header);
-    border-left: 1px solid white;
+    border-left: 1px solid rgb(138, 138, 138);
     padding-inline: .5rem;
 
 }
@@ -137,6 +172,12 @@ body {
     padding: .5rem 1.5rem;
     margin-bottom: 1rem;
     border-radius: 10px;
+}
+
+.discussion .btn_delate {
+    font: .6em;
+    padding: 0;
+    color: var(--text-color);
 }
 
 .content_chat .input-group {

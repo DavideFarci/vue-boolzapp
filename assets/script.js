@@ -173,8 +173,7 @@ const app = Vue.createApp({
             activeIndex: 0,
             newMex: '',
             inpSearch: '',
-
-
+            lightMode: true,
         };
     },
     methods: {
@@ -190,7 +189,7 @@ const app = Vue.createApp({
         newMessage(text, index) {
             if (text !== "") {
                 let newMassageText = {
-                    date: this.getTimeMessage().substring(10, 15),
+                    date: this.getTimeMessage(),
                     message: text,
                     status: 'sent'
                 }
@@ -200,20 +199,20 @@ const app = Vue.createApp({
 
                 setTimeout(() => {
                     let pcMessage = {
-                        date: this.getTimeMessage().substring(10, 15),
+                        date: this.getTimeMessage(),
                         message: "ok stronzo",
                         status: 'received'
                     };
                     this.contacts[index].messages.push(pcMessage);
                     this.scrollBottomFix();
-
                 }, 1000);
             };
         },
         deleteMessage(i) {
             this.contacts[this.activeIndex].messages.splice(i, 1);
-            // const lastIndex = messages.length - 1;
-            // this.contacts[this.activeIndex].messages.splice(lastIndex, 1);
+        },
+        lightDarkMode() {
+            this.lightMode = !this.lightMode;
         },
         // Per assicurare che lo scroll stia sempre fissato in basso(funziona)
         scrollBottomFix() {
@@ -244,5 +243,5 @@ const app = Vue.createApp({
 });
 
 
-app.mount("#container");
+app.mount("#root");
 

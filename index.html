@@ -19,145 +19,151 @@
 </head>
 <body>
 
-    <div class="container d-flex align-items-center justify-content-center" id="container">
-        <div class="chat_container d-flex">
-    
-    
-            <!-- elenco delle chat SX -->
-            <div class="chat">
-                
-                <!-- header sx con banner  -->
-                <div class="chat_header d-flex justify-content-between">
-    
-                    <div class="user d-flex align-items-center">
-                        <img src="assets/img/Screenshot_1.png" alt="avatar_user">
-                        <div class="name_user">Davide</div>
-                    </div>
-                    <div class="command d-flex align-items-center">
-                        <i class="fa-solid fa-circle-notch p-2"></i>
-                        <i class="fa-solid fa-message p-2"></i>
-                        <i class="fa-solid fa-ellipsis-vertical p-2"></i>
-                    </div>
-    
-                </div>
-                <div class="banner d-flex gap-3 p-2">
-                    <i class="fa-regular fa-bell-slash"></i>
-                    <div class="d-flex flex-column justify-content-center">
-                        <span>Ricevi notifiche di nuovi messaggi</span>
-                        <span class="grey_banenr">Attiva notifiche desktop</span>
-                    </div>
-                </div>
-                
-                <!-- vero elenco chat  -->
-                <div class="chats">
-                    
-                    <!-- barra di ricerca  -->
-                    <div class="search input-group">
-                        <input 
-                            type="text" 
-                            class="form-control" 
-                            placeholder="Cerca tra le chat..." 
-                            aria-label="Username"
-                            v-model="inpSearch"
-                        >
-                    </div>
-
-                    <div 
-                        v-for="(card, i) in searchContact" 
-                        :key="card.name"
-                        class="card_chat d-flex justify-content-between p-2"
-                        @click="currentChat(card)"
-                        :class="{selected: card == contacts[activeIndex]}"
-                    >
-                        <div class="user_img_chat d-flex align-items-center">
-                            <img :src="card.avatar" alt="avatar_user">
-                            <div class="d-flex flex-column ">
-                                <div class="name_user">{{ card.name }}</div>
-                                <div class="mess_preview" v-if="card.messages && card.messages.length > 0"> {{ card.messages.length > 0 ? card.messages[card.messages.length - 1].message : '' }} </div>
+    <div id="root">
+        <div class="background" :class="lightMode ? 'light' : 'dark'">
+            <div class="container d-flex align-items-center justify-content-center" id="container">
+                <div class="chat_container d-flex">
+            
+            
+                    <!-- elenco delle chat SX -->
+                    <div class="chat">
+                        
+                        <!-- header sx con banner  -->
+                        <div class="chat_header d-flex justify-content-between">
+            
+                            <div class="user d-flex align-items-center">
+                                <img src="assets/img/Screenshot_1.png" alt="avatar_user">
+                                <div class="name_user">Davide</div>
+                            </div>
+                            <div class="command d-flex align-items-center">
+                                <i @click="lightDarkMode" class="fa-solid fa-circle-half-stroke" style="cursor: pointer;"></i>
+                                <i class="fa-solid fa-message p-2"></i>
+                                <i class="fa-solid fa-ellipsis-vertical p-2"></i>
+                            </div>
+            
+                        </div>
+                        <div class="banner d-flex gap-3 p-2">
+                            <i class="fa-regular fa-bell-slash"></i>
+                            <div class="d-flex flex-column justify-content-center">
+                                <span>Ricevi notifiche di nuovi messaggi</span>
+                                <span class="grey_banner">Attiva notifiche desktop</span>
                             </div>
                         </div>
-                
-                        <div class="mess_details" v-if="card.messages && card.messages.length > 0">
-                            {{ card.messages.length > 0 ? card.messages[card.messages.length - 1].date : '' }}
+                        
+                        <!-- vero elenco chat  -->
+                        <div class="chats">
+                            
+                            <!-- barra di ricerca  -->
+                            <div class="input-group">
+                                <input 
+                                    type="text" 
+                                    class="form-control"
+                                    :class="{'bg-dark': !lightMode}" 
+                                    placeholder="Cerca tra le chat..." 
+                                    aria-label="Username"
+                                    v-model="inpSearch"
+                                >
+                            </div>
+        
+                            <div 
+                                v-for="(card, i) in searchContact" 
+                                :key="card.name"
+                                class="card_chat d-flex justify-content-between p-2"
+                                @click="currentChat(card)"
+                                :class="{selected: card == contacts[activeIndex]}"
+                            >
+                                <div class="user_img_chat d-flex align-items-center">
+                                    <img :src="card.avatar" alt="avatar_user">
+                                    <div class="d-flex flex-column ">
+                                        <div class="name_user">{{ card.name }}</div>
+                                        <div class="mess_preview" v-if="card.messages && card.messages.length > 0"> {{ card.messages.length > 0 ? card.messages[card.messages.length - 1].message : '' }} </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="mess_details" v-if="card.messages && card.messages.length > 0">
+                                    {{ card.messages.length > 0 ? card.messages[card.messages.length - 1].date : '' }}
+                                </div>
+                            </div>
                         </div>
+            
                     </div>
-                </div>
-    
-            </div>
-    
-            <!-- contenuto della chat DX -->
-            <div class="content_chat position-relative">
-                
-                <!-- header della discussione  -->
-                <div class="content_header d-flex justify-content-between">
-    
-                    <div class="user d-flex align-items-center">
-                        <img  
-                            :src="contacts[activeIndex].avatar" 
-                            alt="avatar_user" 
-
-                        >
-                        <div 
-                            class="name_user_discussion" 
-                        > 
-                            {{ contacts[activeIndex].name }}
-                            <div v-if="contacts[activeIndex].messages && contacts[activeIndex].messages.length > 0" style="font-size: .8rem;">Ultimo accesso oggi alle: {{ contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date }} </div>
+            
+                    <!-- contenuto della chat DX -->
+                    <div class="content_chat position-relative">
+                        
+                        <!-- header della discussione  -->
+                        <div class="content_header d-flex justify-content-between">
+            
+                            <div class="user d-flex align-items-center">
+                                <img  
+                                    :src="contacts[activeIndex].avatar" 
+                                    alt="avatar_user" 
+        
+                                >
+                                <div 
+                                    class="name_user_discussion" 
+                                > 
+                                    {{ contacts[activeIndex].name }}
+                                    <div v-if="contacts[activeIndex].messages && contacts[activeIndex].messages.length > 0" style="font-size: .8rem;">Ultimo accesso oggi alle: {{ contacts[activeIndex].messages[contacts[activeIndex].messages.length - 1].date }} </div>
+                                </div>
+                            </div>
+                            <div class="command d-flex align-items-center">
+                                <i class="fa-solid fa-circle-notch p-2"></i>
+                                <i class="fa-solid fa-message p-2"></i>
+                                <i class="fa-solid fa-ellipsis-vertical p-2"></i>
+                            </div>
+            
                         </div>
+            
+                        <!-- vero contenuto della chat  -->
+                        <div class="discussion d-flex flex-column" ref="discussion"> 
+        
+                            <div 
+                                class="mess d-flex flex-column" 
+                                v-for="message, i in contacts[activeIndex].messages" 
+                                :class="message.status == 'sent' ? 'sent' : 'received'"
+                            >
+                            <div class="dropdown  align-self-end">
+                                <button class="btn btn_delate" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0; font-size: .6em;">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a @click="deleteMessage(i)" class="dropdown-item" href="#">Elimina</a></li>
+                                    <li><a class="dropdown-item" href="#">Info</a></li>
+                                </ul>
+                            </div>
+                                {{ message && message.message }}
+                                <div class="align-self-end" style="font-size: .7em; color: grey;"> {{ message.date.substring(10, 16) }} </div>
+                            </div>
+        
+                        </div>
+            
+                        <!-- input messaggio con tasto invio e emoji  -->   
+                        <div class="input_message">
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fa-regular fa-face-smile"></i>
+                                </span>
+                                <input 
+                                    type="text" 
+                                    class="form-control"
+                                    :class="{'bg-dark': !lightMode}" 
+                                    placeholder="Messaggio..." 
+                                    aria-label="Username"     
+                                    v-model="newMex"
+                                    @keyup.enter="newMessage(newMex, activeIndex)"
+                                >
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-microphone" @click="newMessage(newMex)"></i>
+                                </span>
+                            </div>
+                        </div>
+            
                     </div>
-                    <div class="command d-flex align-items-center">
-                        <i class="fa-solid fa-circle-notch p-2"></i>
-                        <i class="fa-solid fa-message p-2"></i>
-                        <i class="fa-solid fa-ellipsis-vertical p-2"></i>
-                    </div>
-    
+            
+            
                 </div>
-    
-                <!-- vero contenuto della chat  -->
-                <div class="discussion d-flex flex-column" ref="discussion"> 
-
-                    <div 
-                        class="mess d-flex flex-column" 
-                        v-for="message, i in contacts[activeIndex].messages" 
-                        :class="message.status == 'sent' ? 'sent' : 'received'"
-                    >
-                    <div class="dropdown  align-self-end">
-                        <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0; font-size: .6em;">
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a @click="deleteMessage(contacts)" class="dropdown-item" href="#">Elimina</a></li>
-                            <li><a class="dropdown-item" href="#">Info</a></li>
-                        </ul>
-                    </div>
-                        {{ message && message.message }}
-                        <div class="align-self-end" style="font-size: .7em; color: grey;"> {{ message.date.substring(10, 16) }} </div>
-                    </div>
-
-                </div>
-    
-                <!-- input messaggio con tasto invio e emoji  -->   
-                <div class="input_message">
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fa-regular fa-face-smile"></i>
-                        </span>
-                        <input 
-                            type="text" 
-                            class="form-control" 
-                            placeholder="Messaggio..." 
-                            aria-label="Username"     
-                            v-model="newMex"
-                            @keyup.enter="newMessage(newMex, activeIndex)"
-                        >
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-microphone" @click="newMessage(newMex)"></i>
-                        </span>
-                    </div>
-                </div>
-    
             </div>
-    
-    
         </div>
     </div>
     
