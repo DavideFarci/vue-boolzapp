@@ -190,10 +190,13 @@ const app = Vue.createApp({
             let ora = now.toLocaleTimeString();
             return data + "," + ora;
         },
+        getTimeLuxon() {
+            return luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss')
+        },
         newMessage(text, index) {
             if (text !== "") {
                 let newMassageText = {
-                    date: this.getTimeMessage(),
+                    date: this.getTimeLuxon(),
                     message: text,
                     status: 'sent'
                 }
@@ -203,8 +206,8 @@ const app = Vue.createApp({
 
                 setTimeout(() => {
                     let pcMessage = {
-                        date: this.getTimeMessage(),
-                        message: "ok stronzo",
+                        date: this.getTimeLuxon(),
+                        message: "Il mattino ha l'oro in bocca",
                         status: 'received'
                     };
                     this.contacts[index].messages.push(pcMessage);
