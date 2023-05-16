@@ -174,7 +174,11 @@ const app = Vue.createApp({
             newMex: '',
             inpSearch: '',
             lightMode: true,
+            showTooltip: false,
         };
+    },
+    mounted() {
+        this.showTooltip = true;
     },
     methods: {
         currentChat(element) {
@@ -213,6 +217,9 @@ const app = Vue.createApp({
         },
         lightDarkMode() {
             this.lightMode = !this.lightMode;
+        },
+        delateTooltip() {
+            this.showTooltip = !this.showTooltip
         },
         // Per assicurare che lo scroll stia sempre fissato in basso(funziona)
         scrollBottomFix() {
