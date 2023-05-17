@@ -198,6 +198,7 @@ input {
     height: calc(100% - 102px);
     padding-inline: 1rem;
     overflow-y: scroll;
+    padding-top: 1rem;
 }
 
 .discussion .mess.sent {

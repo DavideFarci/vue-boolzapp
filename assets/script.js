@@ -221,7 +221,7 @@ const app = Vue.createApp({
         lightDarkMode() {
             this.lightMode = !this.lightMode;
         },
-        delateTooltip() {
+        deleteTooltip() {
             this.showTooltip = !this.showTooltip
         },
         // Per assicurare che lo scroll stia sempre fissato in basso(funziona)
