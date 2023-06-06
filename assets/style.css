@@ -234,6 +234,16 @@ input {
   color: var(--text-color);
 }
 
+.discussion::-webkit-scrollbar {
+  background: var(--bg-scrollbar);
+  width: 8px;
+}
+
+.discussion::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 5px;
+}
+
 .content_chat .input-group {
   position: absolute;
   bottom: 0;
