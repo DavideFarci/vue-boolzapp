@@ -1,233 +1,242 @@
 .light {
-    --bg-background-primar: linear-gradient(  
-        to bottom,
-        #009688 20%,
-        #DBDBD3 20%
-    );
-    --gb-header: #EAEAEA;
-    --bg-chats: white;
-    --bg-chat-selected: #e5ddd5  ;
-    --bg-chat-hover:  #fcf3ea  ;
-    --bg-banner: #8EDAFC ;
-    --bg-mess-sent: #d5f9ba ;
-    --bg-mess-received: white ;
-    --bg-content-chat: url(../assets/img/mine.jpg);
-    --text-color: black;
-    --border-color: white;
+  --bg-background-primar: linear-gradient(to bottom, #009688 20%, #dbdbd3 20%);
+  --gb-header: #eaeaea;
+  --bg-chats: white;
+  --bg-chat-selected: #e5ddd5;
+  --bg-chat-hover: #fcf3ea;
+  --bg-banner: #8edafc;
+  --bg-mess-sent: #d5f9ba;
+  --bg-mess-received: white;
+  --bg-content-chat: url(../assets/img/mine.jpg);
+  --text-color: black;
+  --border-color: white;
+  --bg-scrollbar: lightgrey;
+  --scrollbar-thumb: grey;
 }
 
 .dark {
-    --bg-background-primar: linear-gradient(  
-        to bottom,
-        #01695f 20%,
-        rgb(49, 49, 49) 20%
-    );
-    --gb-header: rgb(46, 46, 46);
-    --bg-chats: black;
-    --bg-chat-selected: #01695f  ;
-    --bg-chat-hover: #373737  ;
-    --bg-banner: black ;
-    --bg-mess-sent: #01695f ;
-    --bg-mess-received: #0a552c;
-    --bg-content-chat: url(../assets/img/b91dc2113881469c07ac99ad9a024a01.jpg);
-    --text-color: rgb(255, 255, 255);
-    --border-color: black;
+  --bg-background-primar: linear-gradient(
+    to bottom,
+    #01695f 20%,
+    rgb(49, 49, 49) 20%
+  );
+  --gb-header: rgb(46, 46, 46);
+  --bg-chats: black;
+  --bg-chat-selected: #01695f;
+  --bg-chat-hover: #373737;
+  --bg-banner: black;
+  --bg-mess-sent: #01695f;
+  --bg-mess-received: #0a552c;
+  --bg-content-chat: url(../assets/img/b91dc2113881469c07ac99ad9a024a01.jpg);
+  --text-color: rgb(255, 255, 255);
+  --border-color: black;
+  --bg-scrollbar: black;
+  --scrollbar-thumb: #014e47;
 }
 
 .background {
-    height: 100vh;
-    background: var(--bg-background-primar);
-    color: var(--text-color);
+  height: 100vh;
+  background: var(--bg-background-primar);
+  color: var(--text-color);
 }
 
 .container {
-    height: 90%;
+  height: 90%;
 }
 
 .chat_container {
-    height: 90%;
-    width: 100%;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    overflow: hidden;
+  height: 90%;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 input {
-    color: var(--text-color) !important;
+  color: var(--text-color) !important;
 }
 
 .form-control::placeholder {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 /* finestra sx chat generale  */
 
 .chat {
-    background-color: white;
-    width: 40%;
-    height: 100%;
-    padding-right: 0;
+  background-color: white;
+  width: 40%;
+  height: 100%;
+  padding-right: 0;
 }
 
 .chat_header {
-    background-color: var(--gb-header);
-    height: 4rem;
-    padding-inline: .5rem;
+  background-color: var(--gb-header);
+  height: 4rem;
+  padding-inline: 0.5rem;
 }
 
 .user img {
-    height: 3.5em;
-    padding: .3rem;
-    border-radius: 5rem;
+  height: 3.5em;
+  padding: 0.3rem;
+  border-radius: 5rem;
 }
 
 .chat .banner {
-    height: 5rem;
-    background-color: var(--bg-banner);
+  height: 5rem;
+  background-color: var(--bg-banner);
 }
 
 .banner i {
-    font-size: 1.2em;
-    background-color: #F2FBFF;
-    color: #8EDAFC;
-    padding: 1rem;
-    border-radius: 2rem;
-    align-self: center;
+  font-size: 1.2em;
+  background-color: #f2fbff;
+  color: #8edafc;
+  padding: 1rem;
+  border-radius: 2rem;
+  align-self: center;
 }
 
 .banner .grey_banner {
-    font-size: .9em;
-    color: grey;
-    text-decoration: underline;
-    cursor: pointer;
+  font-size: 0.9em;
+  color: grey;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .tooltip-container {
-    position: relative;
-    display: inline-block;
-}
-  
-.tooltip {
-    visibility: hidden;
-    width: 166px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 4px;
-    padding: 8px;
-    position: absolute;
-    z-index: 1;
-    top: 31px;
-    left: -60px;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
+  position: relative;
+  display: inline-block;
 }
 
+.tooltip {
+  visibility: hidden;
+  width: 166px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  top: 31px;
+  left: -60px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
 
 .tooltip::before {
-    content: "";
-    position: absolute;
-    top: -16px;
-    right: 7px;
-    border-width: 8px;
-    border-style: solid;
-    border-color: transparent transparent #333 transparent;
+  content: "";
+  position: absolute;
+  top: -16px;
+  right: 7px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
 }
 
 .tooltip i {
-    cursor: pointer;
+  cursor: pointer;
 }
-  
+
 .tooltip.show {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 .chat .chats {
-    height: calc(100% - 144px);
-    overflow-y: auto;
-    background-color: var(--bg-chats);
+  height: calc(100% - 144px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  background-color: var(--bg-chats);
+}
+
+.chats::-webkit-scrollbar {
+  background: var(--bg-scrollbar);
+  width: 8px;
+}
+
+.chats::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 5px;
 }
 
 .input-group {
-    background-color: black !important;
+  background-color: black !important;
 }
 
 .chat .card_chat:hover {
-    background-color: var(--bg-chat-hover);
+  background-color: var(--bg-chat-hover);
 }
 
 .chat .card_chat.selected {
-    background-color:var(--bg-chat-selected);
+  background-color: var(--bg-chat-selected);
 }
 
 .chat .card_chat img {
-    height: 4.5em;
-    padding: .3rem;
-    border-radius: 10rem;
+  height: 4.5em;
+  padding: 0.3rem;
+  border-radius: 10rem;
 }
 
-.card_chat .mess_preview, 
+.card_chat .mess_preview,
 .card_chat .mess_details {
-    font-size: .8em;
-    max-width: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  font-size: 0.8em;
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* finestra dx con contenuto singola chat  */
 
 .content_chat {
-    background-image: var(--bg-content-chat);
-    width: 60%;
-    height: 100%;
-    padding-left: 0;
+  background-image: var(--bg-content-chat);
+  width: 60%;
+  height: 100%;
+  padding-left: 0;
 }
 
 .content_header {
-    height: 4rem;
-    background-color: var(--gb-header);
-    border-left: 1px solid rgb(138, 138, 138);
-    padding-inline: .5rem;
-
+  height: 4rem;
+  background-color: var(--gb-header);
+  border-left: 1px solid rgb(138, 138, 138);
+  padding-inline: 0.5rem;
 }
 
 .content_chat .discussion {
-    height: calc(100% - 102px);
-    padding-inline: 1rem;
-    overflow-y: scroll;
-    padding-top: 1rem;
+  height: calc(100% - 102px);
+  padding-inline: 1rem;
+  overflow-y: scroll;
+  padding-top: 1rem;
 }
 
 .discussion .mess.sent {
-    background-color: var(--bg-mess-sent);
-    align-self: start;
-    max-width: 85%;
-    padding: .5rem 1.5rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
+  background-color: var(--bg-mess-sent);
+  align-self: start;
+  max-width: 85%;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
 }
 
 .discussion .mess.received {
-    background-color: var(--bg-mess-received);
-    align-self: end;
-    max-width: 85%;
-    padding: .5rem 1.5rem;
-    margin-bottom: 1rem;
-    border-radius: 10px;
+  background-color: var(--bg-mess-received);
+  align-self: end;
+  max-width: 85%;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
 }
 
 .discussion .btn_delate {
-    font: .6em;
-    padding: 0;
-    color: var(--text-color);
+  font: 0.6em;
+  padding: 0;
+  color: var(--text-color);
 }
 
 .content_chat .input-group {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
